@@ -1,0 +1,142 @@
+.header {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 102px;
+    margin: 0;
+    border-bottom: 1px solid rgba(196, 196, 196, 0.1) ;
+    height: 80px;
+}
+.header__logo {
+    font-family: 'Roboto Slab';
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+}
+.header__nav {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.header__menu {
+    font-family: 'Roboto';
+    display: flex;
+    list-style: none;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+}
+.header__menu-item {
+    display: block;
+    margin-left: 30px;
+    padding: 25px 0;
+    margin-right: 35px;
+    color: white;
+    text-decoration: none;
+}
+.header__menu-item_underlined {
+    border-bottom: 3px solid white;
+}
+.header__login-button {
+    border: 2px solid white;
+    border-radius: 30px;
+    background-color: rgba(196, 196, 196, 0);
+    color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 19px;
+    cursor: pointer;
+}
+.header__login-pic {
+    margin: 0 0 0 5px;
+    height: 24px;
+    width: 24px;
+    background-image: url('../images/logout.png');
+}
+.header__mobile-menu-button {
+    display: none
+}
+.header_black {
+    background-color: white;
+    color: black;
+}
+.header__login-button_black {
+    border: 2px solid black;
+    color: black;
+}
+.header__login-pic_black {
+    background-image: url('../images/logout-black.png');
+}
+.header__menu-item_black {
+    color: black;
+}
+.header__menu-item_underlined_black {
+    border-bottom: 3px solid black;
+}
+@media screen and (max-width: 950px) {
+    .header {
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 40px;
+        height: 64px;
+    }
+    
+    .header__nav {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .header__menu {
+        font-size: 16px;
+    }
+    .header__menu-item {
+        margin-left: 30px;
+        padding: 18px 0;
+        margin-right: 20px;
+    }
+    .header__login-button {
+        border-radius: 30px;
+        height: 40px;
+        width: 180px;
+        padding: 0 10px;
+    }
+    .header__mobile-menu-button {
+        display: none
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .header {
+        width: 90%;
+        padding: 0 5% 0 5%;
+        height: 56px;
+    }
+    .header__nav {
+        display: none;
+    }
+    .header__login-button {
+        display: none;
+    }
+    .header__mobile-menu-button {
+        display: block;
+        width: 24px;
+        height: 24px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        outline: none;
+        background-image: none;
+        padding: 0;
+        margin: 0;
+    }
+    .header__mobile-menu-button_white {
+        background-image: url(../images/mobile-menu-white.svg);
+    }
+    .header__mobile-menu-button_black {
+        background-image: url(../images/mobile-menu-black.svg);
+    }
+    .header__mobile-menu-button_close {
+        background-image: url(../images/mobile-menu-close-white.svg);
+    }
+  }
