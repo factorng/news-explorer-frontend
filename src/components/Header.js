@@ -6,10 +6,10 @@ import logoutPic from "../images/logout.svg";
 function Header({ handleMobileOpen, popupAuthOpen }) {
   const { pathname } = useLocation();
   return (
-    <menu
+    <div
       className={pathname === "/saved-news" ? "header header_black" : "header"}
     >
-      <h1 className="header__logo"> NewsExplorer </h1>
+      <p className="header__logo"> NewsExplorer </p>
       <nav className="header__nav">
         <ul className="header__menu">
           <li>
@@ -57,13 +57,13 @@ function Header({ handleMobileOpen, popupAuthOpen }) {
           onClick={popupAuthOpen}
         >
           Авторизоваться
-          <p
+          <span
             className={
               pathname === "/saved-news"
                 ? "header__login-pic header__login-pic_black"
                 : "header__login-pic"
             }
-          ></p>
+          ></span>
         </button>
       </nav>
       <button
@@ -74,7 +74,7 @@ function Header({ handleMobileOpen, popupAuthOpen }) {
         }
         onClick={handleMobileOpen}
       ></button>
-    </menu>
+    </div>
   );
 }
 

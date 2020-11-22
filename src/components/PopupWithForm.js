@@ -25,7 +25,6 @@ function PopupWithForm({
         className={`popup__form ${formName}`}
         method="post"
         action="#"
-        noValidate
         onSubmit={onSubmit}
       >
         <button

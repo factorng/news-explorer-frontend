@@ -11,7 +11,7 @@
 }
 
 .saved-news-header__header {
-    font-family: 'Roboto';
+    font-family: 'Roboto', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -21,7 +21,7 @@
 }
 
 .saved-news-header__articles-count {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 40px;
@@ -31,7 +31,7 @@
 }
 
 .saved-news-header__keywords {
-    font-family: 'Roboto';
+    font-family: 'Roboto', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;

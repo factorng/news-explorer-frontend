@@ -18,7 +18,7 @@
 }
 .popup__logo {
   display: none;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab', 'Arial', sans-serif;
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
@@ -52,7 +52,7 @@
 }
 
 .popup__title {
-  font-family: Roboto;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
@@ -63,7 +63,7 @@
 .popup__button-submit {
   background-color: #2F71E5;
   color: #fff;
-  font-family: Roboto;
+  font-family: 'Roboto', 'Arial', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;

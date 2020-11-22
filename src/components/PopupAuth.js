@@ -39,11 +39,10 @@ function PopupAuth({
         <>
           <div className="popup__input-field">
             <input
-              id="input-email"
               className="popup__input edit-profile__input-email"
               type="email"
               value={email || ''}
-              onChange={(e) => console.log(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               name="name"
               placeholder="Введите email"
               minLength={2}
@@ -51,22 +50,21 @@ function PopupAuth({
               pattern="^[^@]+@[^@.]+\.[^@]+$"
               required
             />
-            <span id="input-email-error" className="popup__input-error" />
+            
           </div>
           <div className="popup__input-field">
             <input
-              id="input-password"
               className="popup__input edit-profile__input-password"
               type="text"
               value={password || ''}
-              onChange={(e) => console.log(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               name="occupation"
               placeholder="Ведите пароль"
               minLength={2}
               maxLength={20}
               required
             />
-            <span id="input-password-error" className="popup__input-error" />
+            
           </div>
         </>
     </PopupWithForm>

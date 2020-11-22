@@ -9,7 +9,7 @@
     height: 80px;
 }
 .header__logo {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', 'Arial', sans-serif;
     font-size: 20px;
     line-height: 24px;
     font-weight: 700;
@@ -20,7 +20,7 @@
     align-items: center;
 }
 .header__menu {
-    font-family: 'Roboto';
+    font-family: 'Roboto', 'Arial', sans-serif;
     display: flex;
     list-style: none;
     font-size: 18px;

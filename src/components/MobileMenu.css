@@ -40,7 +40,7 @@
 
 .mobile-menu__logo {
     color: white;
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', 'Arial', sans-serif;
     font-size: 20px;
     line-height: 24px;
     font-weight: 700;
@@ -56,7 +56,7 @@
     margin: 20px 0;
     color: white;
     text-decoration: none;
-    font-family: 'Roboto';
+    font-family: 'Roboto', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;

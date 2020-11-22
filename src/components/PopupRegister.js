@@ -39,7 +39,6 @@ function PopupRegister({
         <>
           <div className="popup__input-field">
             <input
-              id="input-email"
               className="popup__input edit-profile__input-email"
               type="email"
               value={email || ''}
@@ -55,7 +54,6 @@ function PopupRegister({
           </div>
           <div className="popup__input-field">
             <input
-              id="input-password"
               className="popup__input edit-profile__input-password"
               type="text"
               value={password || ''}
@@ -66,11 +64,9 @@ function PopupRegister({
               maxLength={20}
               required
             />
-            <span id="input-password-error" className="popup__input-error" />
           </div>
           <div className="popup__input-field">
             <input
-              id="input-name"
               className="popup__input edit-profile__input-name"
               type="text"
               value={name || ''}
@@ -81,7 +77,6 @@ function PopupRegister({
               maxLength={20}
               required
             />
-            <span id="input-password-error" className="popup__input-error" />
           </div>
         </>
     </PopupWithForm>

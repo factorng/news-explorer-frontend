@@ -5,7 +5,7 @@ import my_foto from "../images/my_foto.jpg";
 function About() {
   return (
     <section className="about">
-        <img className="about__image" src={my_foto}></img>
+        <img className="about__image" src={my_foto} alt="фотография автора"></img>
         <section className="about__info">
           <h2 className="about__title">Об авторе</h2>
           <p className="about__text">

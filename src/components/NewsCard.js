@@ -19,7 +19,7 @@ function NewsCard({keyword, image, date, header, text, source}) {
     <div className="news-card">
       <p className={keywordClassName}>{keyword}</p>
       <button className={buttonClassName}></button>
-      <img className="news-card__image" src={image}></img>
+      <img className="news-card__image" src={image} alt={header}></img>
       <div className="news-card__info">
         <p className="news-card__date">{date}</p>
         <h3 className="news-card__header">

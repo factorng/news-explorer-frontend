@@ -9,7 +9,7 @@ function SearchForm() {
             <p className="search__text">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
         </section>
         <form className="search__form">
-            <input type="text" className="search__input"></input>
+            <input type="text" className="search__input" required></input>
             <button className="search__button">Искать</button>
         </form>
     </main>
