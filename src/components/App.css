@@ -1,0 +1,7 @@
+.wrapper{
+    background-image: url('../images/main_bg.png');
+    background-repeat: no-repeat;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-position: top center;
+}
