@@ -11,9 +11,9 @@ function PopupWithForm({
   children,
   buttonText,
   onClickBottomButton,
-  bottomButtonText
+  bottomButtonText,
+  submitEnable,
 }) {
-
   return (
     <div
       className={
@@ -26,6 +26,7 @@ function PopupWithForm({
         method="post"
         action="#"
         onSubmit={onSubmit}
+        novalidate
       >
         <button
           className="popup__button-close"
@@ -36,11 +37,23 @@ function PopupWithForm({
         <h3 className="popup__title">{title}</h3>
         {children}
 
-        <button className="popup__button-submit" type="submit">
+        <button
+          className={
+            submitEnable
+              ? "popup__button-submit"
+              : "popup__button-submit popup__button-submit_disabled"
+          }
+          disabled={!submitEnable}
+          type="submit"
+        >
           {buttonText}
         </button>
-        <p className="popup__bottom-button">или 
-          <span className="popup__bottom-button-text" onClick={onClickBottomButton}>
+        <p className="popup__bottom-button">
+          или
+          <span
+            className="popup__bottom-button-text"
+            onClick={onClickBottomButton}
+          >
             {bottomButtonText}
           </span>
         </p>

@@ -1,31 +1,46 @@
-import React from 'react';
-import PopupWithForm from './PopupWithForm';
+import React from "react";
+import PopupWithForm from "./PopupWithForm";
+import useFormWithValidation from "../hooks/formWithValidation";
 
 function PopupRegister({
-  isOpen, onClose, handlePopupAuthOpen
+  isOpen,
+  onClose,
+  handlePopupAuthOpen,
+  handleRegister,
+  isError
 }) {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  const [name, setName] = React.useState('');
-
- 
+  const {
+    values,
+    handleChange,
+    errors,
+    isValid,
+    resetForm,
+  } = useFormWithValidation();
 
   function handleClose() {
     onClose();
+    resetForm({ email: "", password: "", name: "" }, {}, false);
   }
 
   function handleSubmit(e) {
     // Запрещаем браузеру переходить по адресу формы
     e.preventDefault();
+    const email = values.email;
+    const password = values.password;
+    const name = values.name;
+    if (!email || !password || !name) {
+      return;
+    }
 
     // Передаём значения управляемых компонентов во внешний обработчик
-    console.log(email, name, password)
+    handleRegister(email, password, name);
   }
- 
+
   function handlePopupOpen() {
     onClose();
     handlePopupAuthOpen(true);
   }
+
   return (
     <PopupWithForm
       isOpen={isOpen}
@@ -35,50 +50,81 @@ function PopupRegister({
       buttonText="Зарегистрироваться"
       bottomButtonText="Войти"
       onClickBottomButton={handlePopupOpen}
+      submitEnable={isValid}
     >
-        <>
-          <div className="popup__input-field">
-            <input
-              className="popup__input edit-profile__input-email"
-              type="email"
-              value={email || ''}
-              onChange={(e) => setEmail(e.target.value)}
-              name="email"
-              placeholder="Введите email"
-              minLength={2}
-              maxLength={40}
-              pattern="^[^@]+@[^@.]+\.[^@]+$"
-              required
-            />
-            <span id="input-email-error" className="popup__input-error" />
-          </div>
-          <div className="popup__input-field">
-            <input
-              className="popup__input edit-profile__input-password"
-              type="text"
-              value={password || ''}
-              onChange={(e) => setPassword(e.target.value)}
-              name="password"
-              placeholder="Ведите пароль"
-              minLength={2}
-              maxLength={20}
-              required
-            />
-          </div>
-          <div className="popup__input-field">
-            <input
-              className="popup__input edit-profile__input-name"
-              type="text"
-              value={name || ''}
-              onChange={(e) => setName(e.target.value)}
-              name="name"
-              placeholder="Введите имя"
-              minLength={2}
-              maxLength={20}
-              required
-            />
-          </div>
-        </>
+      <>
+        <div className="popup__input-field">
+          <input
+            id="email-registration"
+            className="popup__input edit-profile__input-email"
+            type="email"
+            value={values.email || ""}
+            onChange={handleChange}
+            name="email"
+            placeholder="Введите email"
+            minLength={2}
+            maxLength={40}
+            pattern="^[^@]+@[^@.]+\.[^@]+$"
+            required
+          />
+          <span
+            className={`popup__input-error popup__name-error ${
+              !isValid && "popup__input-error_active"
+            }`}
+          >
+            {errors.email || ""}
+          </span>
+        </div>
+        <div className="popup__input-field">
+          <input
+            id="password-registration"
+            className="popup__input edit-profile__input-password"
+            type="text"
+            value={values.password || ""}
+            onChange={handleChange}
+            name="password"
+            placeholder="Ведите пароль"
+            minLength={2}
+            maxLength={20}
+            required
+          />
+          <span
+            className={`popup__input-error popup__name-error ${
+              !isValid && "popup__input-error_active"
+            }`}
+          >
+            {errors.password || ""}
+          </span>
+        </div>
+        <div className="popup__input-field">
+          <input
+            id="name-registration"
+            className="popup__input edit-profile__input-name"
+            type="text"
+            value={values.name || ""}
+            onChange={handleChange}
+            name="name"
+            placeholder="Введите имя"
+            minLength={2}
+            maxLength={20}
+            required
+          />
+          <span
+            className={`popup__input-error popup__name-error ${
+              !isValid && "popup__input-error_active"
+            }`}
+          >
+            {errors.name || ""}
+          </span>
+          <span
+            className={`popup__error_registration ${
+              isError && "popup__error_registration_active"
+            } `}
+          >
+            Такой пользователь уже есть
+          </span>
+        </div>
+      </>
     </PopupWithForm>
   );
 }

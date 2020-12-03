@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useLocation, NavLink } from "react-router-dom";
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import "./Header.css";
-import logoutPic from "../images/logout.svg";
 
-function Header({ handleMobileOpen, popupAuthOpen }) {
+function Header({ handleMobileOpen, popupAuthOpen, handleLogOut }) {
   const { pathname } = useLocation();
+  const currentUser = React.useContext(CurrentUserContext);
   return (
     <div
       className={pathname === "/saved-news" ? "header header_black" : "header"}
@@ -54,9 +55,9 @@ function Header({ handleMobileOpen, popupAuthOpen }) {
               ? "header__login-button header__login-button_black"
               : "header__login-button"
           }
-          onClick={popupAuthOpen}
+          onClick={currentUser.name ? handleLogOut : popupAuthOpen}
         >
-          Авторизоваться
+          {currentUser.name || "Авторизоваться"}
           <span
             className={
               pathname === "/saved-news"

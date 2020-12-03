@@ -72,6 +72,9 @@
     align-self: center;
     margin: 40px 0 0 0;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .mobile-menu__close-button {
     background-image: url('../images/mobile-menu-close-white.svg');
@@ -81,4 +84,12 @@
     width: 16px;
     height: 16px;
     cursor: pointer;
+}
+.mobile-menu__login-pic {
+    margin: 0 0 0 15px;
+    height: 24px;
+    width: 24px;
+    padding: 0;
+    background-image: url('../images/logout.png');
+    display: inline-block;
 }

@@ -26,6 +26,7 @@
     font-size: 18px;
     line-height: 24px;
     font-weight: 500;
+    outline: none;
 }
 .header__menu-item {
     display: block;
