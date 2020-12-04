@@ -1,5 +1,5 @@
 import React from "react";
-import "./PopupWithForm.css";
+import "../PopupWithForm/PopupWithForm.css";
 import "./InfoTooltipPopup.css";
 
 function InfoTooltip({ onOpen, isOpen, onClose, handleButtonCLick }) {

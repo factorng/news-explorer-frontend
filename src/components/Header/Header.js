@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useLocation, NavLink } from "react-router-dom";
-import { CurrentUserContext } from '../contexts/CurrentUserContext';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import "./Header.css";
 
 function Header({ handleMobileOpen, popupAuthOpen, handleLogOut }) {
@@ -31,6 +31,7 @@ function Header({ handleMobileOpen, popupAuthOpen, handleLogOut }) {
               Главная
             </NavLink>
           </li>
+          {currentUser.name ?
           <li>
             <NavLink
               to="/saved-news"
@@ -48,6 +49,7 @@ function Header({ handleMobileOpen, popupAuthOpen, handleLogOut }) {
               Сохраненные статьи
             </NavLink>
           </li>
+          : ''} 
         </ul>
         <button
           className={

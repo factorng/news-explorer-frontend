@@ -26,7 +26,7 @@ function PopupWithForm({
         method="post"
         action="#"
         onSubmit={onSubmit}
-        novalidate
+        noValidate
       >
         <button
           className="popup__button-close"

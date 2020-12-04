@@ -1,7 +1,7 @@
 import React from "react";
 import './SavedNews.css';
-import NewsCard from './NewsCard';
-import "./NewsCard.css";
+import NewsCard from '../NewsCard/NewsCard';
+import "../NewsCard/NewsCard.css";
 
 function SavedNews({ article, handleButton, savedArticles }) {
   const savedNewsContainer = `${

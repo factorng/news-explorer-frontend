@@ -1,6 +1,6 @@
 import React from "react";
-import PopupWithForm from "./PopupWithForm";
-import useFormWithValidation from "../hooks/formWithValidation";
+import PopupWithForm from "../PopupWithForm/PopupWithForm";
+import useFormWithValidation from "../../hooks/formWithValidation";
 
 function PopupRegister({
   isOpen,
@@ -79,7 +79,7 @@ function PopupRegister({
           <input
             id="password-registration"
             className="popup__input edit-profile__input-password"
-            type="text"
+            type="password"
             value={values.password || ""}
             onChange={handleChange}
             name="password"

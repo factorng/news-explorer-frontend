@@ -1,7 +1,7 @@
-const BASE_URL = "https://api.news.students.nomoreparties.space";
+import {NEWS_EXPLORER_API_URL} from "../utils/constants"
 
 export const register = (email, password, name) =>
-  fetch(`${BASE_URL}/signup`, {
+  fetch(`${NEWS_EXPLORER_API_URL}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -19,7 +19,7 @@ export const register = (email, password, name) =>
   });
 
 export const authorize = (email, password) =>
-  fetch(`${BASE_URL}/signin/`, {
+  fetch(`${NEWS_EXPLORER_API_URL}/signin/`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -42,7 +42,7 @@ export const authorize = (email, password) =>
   });
 
 export const getUserInfo = () =>
-  fetch(`${BASE_URL}/users/me`, {
+  fetch(`${NEWS_EXPLORER_API_URL}/users/me`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export const getUserInfo = () =>
 
 export const saveArticle = ({keyword, title, text, date, source, link, image}) =>
 {
-  fetch(`${BASE_URL}/articles`, {
+  fetch(`${NEWS_EXPLORER_API_URL}/articles`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -94,7 +94,7 @@ export const saveArticle = ({keyword, title, text, date, source, link, image}) =
 }
 
   export const getSavedArticles = () => 
-    fetch(`${BASE_URL}/articles`, {
+    fetch(`${NEWS_EXPLORER_API_URL}/articles`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -106,7 +106,7 @@ export const saveArticle = ({keyword, title, text, date, source, link, image}) =
   );
   
   export const deleteArticle = (article) => {
-    return fetch(`${BASE_URL}/articles/${article._id}`, {
+    return fetch(`${NEWS_EXPLORER_API_URL}/articles/${article._id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

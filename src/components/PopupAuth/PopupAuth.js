@@ -1,6 +1,6 @@
 import React from "react";
-import PopupWithForm from "./PopupWithForm";
-import useFormWithValidation from "../hooks/formWithValidation";
+import PopupWithForm from "../PopupWithForm/PopupWithForm";
+import useFormWithValidation from "../../hooks/formWithValidation";
 
 function PopupAuth({ isOpen, onClose, handlePopupRegisterOpen, handleLogin }) {
   const {
@@ -25,10 +25,9 @@ function PopupAuth({ isOpen, onClose, handlePopupRegisterOpen, handleLogin }) {
       return;
     }
     // Передаём значения управляемых компонентов во внешний обработчик
-    handleLogin(email, password);
-    handleClose();
+    handleLogin(email, password, handleClose);
   }
-  function handlePopupOpen() {
+  function handlePopupSwitch() { 
     onClose();
     handlePopupRegisterOpen(true);
   }
@@ -41,7 +40,7 @@ function PopupAuth({ isOpen, onClose, handlePopupRegisterOpen, handleLogin }) {
       onSubmit={handleSubmit}
       buttonText="Войти"
       bottomButtonText="Зарегистрироваться"
-      onClickBottomButton={handlePopupOpen}
+      onClickBottomButton={handlePopupSwitch}
       submitEnable={isValid}
     >
       <>
@@ -71,7 +70,7 @@ function PopupAuth({ isOpen, onClose, handlePopupRegisterOpen, handleLogin }) {
           <input
             id="password"
             className="popup__input edit-profile__input-password"
-            type="text"
+            type="password"
             value={values.password || ""}
             onChange={handleChange}
             name="password"

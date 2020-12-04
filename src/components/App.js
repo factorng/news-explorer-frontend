@@ -1,20 +1,20 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
-import Header from "./Header";
+import Header from "./Header/Header";
 import "./App.css";
-import SearchForm from "./SearchForm";
-import About from "./About";
-import Footer from "./Footer";
-import NewsCardList from "./NewsCardList";
-import PopupAuth from "./PopupAuth";
-import PopupRegister from "./PopupRegister";
-import SavedNewsHeader from "./SavedNewsHeader";
-import SavedNews from "./SavedNews";
-import MobileMenu from "./MobileMenu";
-import Preloader from "./Preloader";
+import SearchForm from "./SearchForm/SearchForm";
+import About from "./About/About";
+import Footer from "./Footer/Footer";
+import NewsCardList from "./NewsCardList/NewsCardList";
+import PopupAuth from "./PopupAuth/PopupAuth";
+import PopupRegister from "./PopupRegister/PopupRegister";
+import SavedNewsHeader from "./SavedNewsHeader/SavedNewsHeader";
+import SavedNews from "./SavedNews/SavedNews";
+import MobileMenu from "./MobileMenu/MobileMenu";
+import Preloader from "./Preloader/Preloader";
 import newsApi from "../utils/NewsApi";
-import ProtectedRoute from "./ProtectedRoute";
+import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 import {
   register,
   authorize,
@@ -23,8 +23,9 @@ import {
   getSavedArticles,
   deleteArticle,
 } from "../utils/MainApi";
-import InfoTooltip from "./InfoTooltipPopup";
+import InfoTooltip from "./InfoTooltipPopup/InfoTooltipPopup";
 import useFormWithValidation from "../hooks/formWithValidation";
+import { IMAGE_NOT_FOUND } from "../utils/constants";
 
 function App() {
   const [isPopupAuthOpen, setIsPopupAuthOpen] = React.useState(false);
@@ -51,13 +52,13 @@ function App() {
         .getNews(searchQuery, new Date())
         .then((apiCards) => {
           setNewsCards(apiCards.articles);
-          if(loggedIn) {
+          if (loggedIn) {
             localStorage.setItem("articles", JSON.stringify(apiCards.articles));
             localStorage.setItem("keyword", JSON.stringify(searchQuery));
           }
         })
         .then(() => setIsLoading(false));
-    } 
+    }
   }
   useEffect(() => {
     tokenCheck();
@@ -76,9 +77,8 @@ function App() {
         const localStorageArticles = JSON.parse(
           localStorage.getItem("articles")
         );
-        if (localStorageArticles)
-          setNewsCards(localStorageArticles);
-        
+        if (localStorageArticles) setNewsCards(localStorageArticles);
+
         let keyWords = [];
         articles.map((elem) => keyWords.push(elem.keyword));
         setKeyWords(keyWords);
@@ -117,12 +117,13 @@ function App() {
     setIsMobileMenuOpen(false);
   };
 
-  function handleLogin(email, password) {
+  function handleLogin(email, password, handleClose) {
     return authorize(email, password)
       .then((res) => {
         if (res && res.token) {
           localStorage.setItem("jwt", res.token);
           tokenCheck();
+          handleClose();
         }
       })
       .catch((err) => {
@@ -174,15 +175,19 @@ function App() {
     setLoggedIn(false);
     setNewsCards([]);
     setCurrentUser({});
-    setSearchQuery('');
+    setSearchQuery("");
   }
 
   function handleArticleSave(article) {
-    if(loggedIn){
-      const articleToSaveOrDelete = savedArticles.find((i) => i.title === article.title);
-      if(!articleToSaveOrDelete) {
+    if (loggedIn) {
+      const articleToSaveOrDelete = savedArticles.find(
+        (i) => i.title === article.title
+      );
+
+      if (!articleToSaveOrDelete) {
+        console.log(article);
         saveArticle({
-          image: article.urlToImage,
+          image: article.urlToImage || IMAGE_NOT_FOUND,
           date: article.publishedAt,
           title: article.title,
           text: article.description,
@@ -190,32 +195,36 @@ function App() {
           keyword: searchQuery || localStorage.getItem("keyword"),
           link: article.url,
         });
+
         getSavedArticles()
           .then((articles) => {
             setSavedArticles(articles);
           })
           .catch((err) => {
             console.log(err.message);
-        }); 
+          });
       } else {
         handleDeleteArticle(articleToSaveOrDelete);
       }
+    } else {
+      setIsPopupRegisterOpen(true);
     }
-
   }
 
   function handleDeleteArticle(article) {
     deleteArticle(article)
       .then(() => {
-        setSavedArticles(savedArticles.filter((elem) => elem._id !== article._id));
+        setSavedArticles(
+          savedArticles.filter((elem) => elem._id !== article._id)
+        );
       })
       .catch((err) => {
         console.log(err.message);
-      });    
+      });
   }
 
   function handleInfoTooltipClose() {
-    setIsInfoTooltipOpen(false)
+    setIsInfoTooltipOpen(false);
     setIsPopupAuthOpen(true);
   }
 
@@ -258,6 +267,7 @@ function App() {
             savedArticles={savedArticles}
             articles={savedArticles}
             handleButton={handleDeleteArticle}
+            popupAuthOpen={setIsPopupAuthOpen}
           />
         </Switch>
         <Footer />

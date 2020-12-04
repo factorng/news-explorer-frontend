@@ -37,7 +37,7 @@
   position: absolute;
   right: -35px;
   top: -35px;
-  background-image: url(../images/close_icon.svg);
+  background-image: url(../../images/close_icon.svg);
   background-color: rgba(0, 0, 0, 0);
   background-position: center;
   border: 0;
@@ -162,7 +162,7 @@
 
 @media screen and (max-width: 520px) {
   .popup {
-    background-image: url('../images/main_bg.png');
+    background-image: url('../../images/main_bg.png');
     background-color: white;
     background-size: 800px;
     background-repeat: no-repeat;
