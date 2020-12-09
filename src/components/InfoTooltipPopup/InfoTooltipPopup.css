@@ -1,0 +1,29 @@
+.info-tooltip {
+  background-color: #fff;
+  position: relative;
+  width: 430px;
+  height: 182px;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.info-tooltip__button {
+  max-width: 228px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #2f71e5;
+  cursor: pointer;
+  margin: 0 0 0 35px;
+  text-align: start;
+  padding: 0;
+  border: none;
+  background: none;
+  outline: none;
+  display: block;
+}

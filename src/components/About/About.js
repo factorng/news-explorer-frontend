@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./About.css";
-import my_foto from "../images/my_foto.jpg";
+import my_foto from "../../images/my_foto.jpg";
 
 function About() {
   return (

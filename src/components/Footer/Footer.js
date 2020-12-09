@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { NavLink  } from "react-router-dom";
 import "./Footer.css";
-import gitIcon from "../images/git.png";
-import facebookIcon from "../images/facebook.png";
+import gitIcon from "../../images/git.png";
+import facebookIcon from "../../images/facebook.png";
 
 function Footer() {
   const scrollToTop = () => {

@@ -2,7 +2,7 @@
   "name": "news-explorer-frontend",
   "version": "0.1.0",
   "homepage": "./",
-  "description": "frontend for news-fxplorer",
+  "description": "frontend for news-explorer",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -17,7 +17,7 @@
   "author": "Efimov Aleksey <factorng@yandex.ru>",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && scp -r ./build/* factor@130.193.40.113:/home/factor/news-frontend",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
