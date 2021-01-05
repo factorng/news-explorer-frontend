@@ -8,7 +8,7 @@ const ProtectedRoute = ({ popupAuthOpen: setIsPopupAuthOpen, component: Componen
         <><Header {...props}/> <Component {...props}/></>
       ) : (
         <>
-        <Redirect to="/" />
+        <Redirect to="/news-explorer-frontend/" />
         {setIsPopupAuthOpen(true)}
         </>
       )

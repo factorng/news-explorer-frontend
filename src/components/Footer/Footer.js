@@ -15,11 +15,11 @@ function Footer() {
       </section>
       <ul className="footer__menu">
           <li>
-            <NavLink exact to="/" className="footer__menu-item" onClick={scrollToTop}>
+            <NavLink exact to="/news-explorer-frontend/" className="footer__menu-item" onClick={scrollToTop}>
              Главная</NavLink>
           </li>
           <li>
-            <NavLink exact to="/saved-news" className="footer__menu-item" onClick={scrollToTop}>
+            <NavLink exact to="/news-explorer-frontend/saved-news" className="footer__menu-item" onClick={scrollToTop}>
                 Сохраненные статьи</NavLink>
           </li>
       </ul>

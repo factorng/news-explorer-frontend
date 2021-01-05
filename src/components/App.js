@@ -157,7 +157,7 @@ function App() {
         })
         .then(() => {
           setLoggedIn(true);
-          history.push("/");
+          history.push("/news-explorer-frontend/");
         })
         .catch((err) => {
           setLoggedIn(false);
@@ -171,7 +171,7 @@ function App() {
     localStorage.removeItem("articles");
     localStorage.removeItem("user");
     localStorage.removeItem("keyword");
-    history.push("/");
+    history.push("/news-explorer-frontend/");
     setLoggedIn(false);
     setNewsCards([]);
     setCurrentUser({});
@@ -241,7 +241,7 @@ function App() {
           handleLogOut={handleLogOut}
         />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/news-explorer-frontend/">
             <SearchForm
               handleQuery={setSearchQuery}
               searchQuery={searchQuery}
@@ -260,7 +260,7 @@ function App() {
           </Route>
           <ProtectedRoute
             exact
-            path="/saved-news"
+            path="/news-explorer-frontend/saved-news"
             loggedIn={loggedIn}
             header={SavedNewsHeader}
             component={SavedNews}

@@ -8,7 +8,7 @@ function Header({ handleMobileOpen, popupAuthOpen, handleLogOut }) {
   const currentUser = React.useContext(CurrentUserContext);
   return (
     <div
-      className={pathname === "/saved-news" ? "header header_black" : "header"}
+      className={pathname === "/news-explorer-frontend/saved-news" ? "header header_black" : "header"}
     >
       <p className="header__logo"> NewsExplorer </p>
       <nav className="header__nav">
@@ -16,14 +16,14 @@ function Header({ handleMobileOpen, popupAuthOpen, handleLogOut }) {
           <li>
             <NavLink
               exact
-              to="/"
+              to="/news-explorer-frontend/"
               className={
-                pathname === "/saved-news"
+                pathname === "/news-explorer-frontend/saved-news"
                   ? "header__menu-item header__menu-item_black"
                   : "header__menu-item"
               }
               activeClassName={
-                pathname === "/saved-news"
+                pathname === "/news-explorer-frontend/saved-news"
                   ? "header__menu-item_underlined header__menu-item_underlined_black"
                   : "header__menu-item_underlined"
               }
@@ -34,14 +34,14 @@ function Header({ handleMobileOpen, popupAuthOpen, handleLogOut }) {
           {currentUser.name ?
           <li>
             <NavLink
-              to="/saved-news"
+              to="/news-explorer-frontend/saved-news"
               className={
-                pathname === "/saved-news"
+                pathname === "/news-explorer-frontend/saved-news"
                   ? "header__menu-item header__menu-item_black"
                   : "header__menu-item"
               }
               activeClassName={
-                pathname === "/saved-news"
+                pathname === "/news-explorer-frontend/saved-news"
                   ? "header__menu-item_underlined header__menu-item_underlined_black"
                   : "header__menu-item_underlined"
               }
@@ -53,7 +53,7 @@ function Header({ handleMobileOpen, popupAuthOpen, handleLogOut }) {
         </ul>
         <button
           className={
-            pathname === "/saved-news"
+            pathname === "/news-explorer-frontend/saved-news"
               ? "header__login-button header__login-button_black"
               : "header__login-button"
           }
@@ -62,7 +62,7 @@ function Header({ handleMobileOpen, popupAuthOpen, handleLogOut }) {
           {currentUser.name || "Авторизоваться"}
           <span
             className={
-              pathname === "/saved-news"
+              pathname === "/news-explorer-frontend/saved-news"
                 ? "header__login-pic header__login-pic_black"
                 : "header__login-pic"
             }
@@ -71,7 +71,7 @@ function Header({ handleMobileOpen, popupAuthOpen, handleLogOut }) {
       </nav>
       <button
         className={
-          pathname === "/saved-news"
+          pathname === "/news-explorer-frontend/saved-news"
             ? "header__mobile-menu-button header__mobile-menu-button_black"
             : "header__mobile-menu-button header__mobile-menu-button_white"
         }

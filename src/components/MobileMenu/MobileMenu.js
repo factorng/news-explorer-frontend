@@ -36,7 +36,7 @@ function MobileMenu({
           <li>
             <NavLink
               exact
-              to="/"
+              to="/news-explorer-frontend/"
               className="mobile-menu__link"
               onClick={handleClose}
             >
@@ -46,7 +46,7 @@ function MobileMenu({
           <li>
             <NavLink
               exact
-              to="/saved-news"
+              to="/news-explorer-frontend/saved-news"
               className="mobile-menu__link"
               onClick={handleClose}
             >
@@ -56,7 +56,7 @@ function MobileMenu({
         </ul>
         <button
           className={
-            pathname === "/saved-news"
+            pathname === "/news-explorer-frontend/saved-news"
               ? "mobile-menu__login-button mobile-menu__login-button_black"
               : "mobile-menu__login-button"
           }
