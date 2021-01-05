@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "./static/css/main.7695e130.chunk.css",
+    "main.js": "./static/js/main.3c4510a8.chunk.js",
+    "main.js.map": "./static/js/main.3c4510a8.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.3199ff88.js",
+    "runtime-main.js.map": "./static/js/runtime-main.3199ff88.js.map",
+    "static/js/2.1421946f.chunk.js": "./static/js/2.1421946f.chunk.js",
+    "static/js/2.1421946f.chunk.js.map": "./static/js/2.1421946f.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.3a3528f6395cd451ea67655333138f9a.js": "./precache-manifest.3a3528f6395cd451ea67655333138f9a.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.7695e130.chunk.css.map": "./static/css/main.7695e130.chunk.css.map",
+    "static/js/2.1421946f.chunk.js.LICENSE.txt": "./static/js/2.1421946f.chunk.js.LICENSE.txt",
+    "static/media/NewsCard.css": "./static/media/trash-grey.5cfec10d.svg",
+    "static/media/PopupWithForm.css": "./static/media/close_icon.c2d0901f.svg",
+    "static/media/App.css": "./static/media/main_bg.6b2028a5.png",
+    "static/media/Header.css": "./static/media/mobile-menu-white.584262ec.svg",
+    "static/media/MobileMenu.css": "./static/media/mobile-menu-close-white.b4d99d68.svg",
+    "static/media/my_foto.jpg": "./static/media/my_foto.c339d7c6.jpg",
+    "static/media/index.css": "./static/media/robotoslab-regular.594bcf8b.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3199ff88.js",
+    "static/js/2.1421946f.chunk.js",
+    "static/css/main.7695e130.chunk.css",
+    "static/js/main.3c4510a8.chunk.js"
+  ]
+}
