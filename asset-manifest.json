@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.5c53a8e9.chunk.css",
+    "main.css": "./static/css/main.cf0f5a9f.chunk.css",
     "main.js": "./static/js/main.248e9f3e.chunk.js",
     "main.js.map": "./static/js/main.248e9f3e.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.3199ff88.js",
@@ -8,9 +8,9 @@
     "static/js/2.1421946f.chunk.js": "./static/js/2.1421946f.chunk.js",
     "static/js/2.1421946f.chunk.js.map": "./static/js/2.1421946f.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.9a8c296f69737e2e36ec28ccb2033109.js": "./precache-manifest.9a8c296f69737e2e36ec28ccb2033109.js",
+    "precache-manifest.c94f88d773ef70dcb18c25c3ef5bc58a.js": "./precache-manifest.c94f88d773ef70dcb18c25c3ef5bc58a.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.5c53a8e9.chunk.css.map": "./static/css/main.5c53a8e9.chunk.css.map",
+    "static/css/main.cf0f5a9f.chunk.css.map": "./static/css/main.cf0f5a9f.chunk.css.map",
     "static/js/2.1421946f.chunk.js.LICENSE.txt": "./static/js/2.1421946f.chunk.js.LICENSE.txt",
     "static/media/NewsCard.css": "./static/media/trash-grey.5cfec10d.svg",
     "static/media/PopupWithForm.css": "./static/media/close_icon.c2d0901f.svg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.3199ff88.js",
     "static/js/2.1421946f.chunk.js",
-    "static/css/main.5c53a8e9.chunk.css",
+    "static/css/main.cf0f5a9f.chunk.css",
     "static/js/main.248e9f3e.chunk.js"
   ]
 }
