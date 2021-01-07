@@ -25,7 +25,7 @@ function NewsCard({ article, handleButton, savedArticles }) {
   }, [article.title, currentUser, savedArticles]);
 
   let buttonClassName = `${
-    pathname === "/saved-news"
+    pathname === "/news-explorer-frontend/saved-news"
       ? "news-card__button-delete"
       : currentUser.name
       ? `${
@@ -36,7 +36,7 @@ function NewsCard({ article, handleButton, savedArticles }) {
       : "news-card__button-bookmark"
   }`;
   const keywordClassName = `${
-    pathname === "/saved-news"
+    pathname === "/news-explorer-frontend/saved-news"
       ? "news-card__keyword news-card__keyword_active"
       : "news-card__keyword"
   }`;
